@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gangsta GPT</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe 
+    src="https://alexandrorocha-vibe-image-generator.hf.space" 
+    id="chatbot">
+  </iframe>
+
+  <script>
+    // Hide Hugging Face footer (only works if Space allows embedding)
+    document.getElementById('chatbot').onload = function() {
+      const iframeDoc = this.contentDocument || this.contentWindow.document;
+      const style = iframeDoc.createElement('style');
+      style.innerHTML = `
+        footer, .footer { display: none !important; }
+      `;
+      iframeDoc.head.appendChild(style);
+    };
+  </script>
+</body>
+</html>

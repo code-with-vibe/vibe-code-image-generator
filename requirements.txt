@@ -1,0 +1,4 @@
+gradio
+gradio-client
+pillow
+requests
